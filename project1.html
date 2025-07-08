@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>Too Fat to Fly?</title>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+<style>
+
+  html, body {
+    margin: 0; padding: 0;
+    height: 100%;
+    font-family: 'Quicksand';
+  }
+
+  body {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .container {
+    border: 1px solid #FF5B00;    /* light grey border */
+    padding: 0em 0em;        /* space inside the box */
+    border-radius: 0px;       /* rounded corners */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* subtle shadow */
+    max-width: 1500px;          /* control width */
+    margin: 0px;         /* center horizontally with vertical margin */
+    background-color: #ffffff9e;    /* white background */
+  }
+
+  section {
+    height: 100vh; /* full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0em;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  #headline {
+    background: #00000;
+  }
+
+  h1 {
+        font-family: "Bitcount Grid Double", sans-serif;
+        font-size: 4em;
+      }
+
+  #headline /* header container */
+  h1 {
+    font-size: 4em;
+    margin: 0;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+/* span that types out */
+.typing-text {
+  display: inline-block;
+  overflow: hidden;                /* hides the “yet‑to‑appear” chars */
+  border-right: 0.15em solid orange;
+  animation: typing 3s steps(16,end) forwards,
+             blink-caret 0.75s step-end infinite;
+}
+
+/* plane span */
+.loop-plane {
+  display: inline-block;
+  margin-left: 0.0em;
+  opacity: 0;                      /* stay invisible until typing ends */
+  animation:
+    fadeIn 1s ease forwards 3s, /* fade in starting after 3 seconds */
+    airplaneLoop 1s ease-in-out infinite 2s; /* start loop after fade in */
+}
+
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Keep your existing airplaneLoop keyframes as is */
+@keyframes airplaneLoop {
+  0%   { transform: translate(0, 0)      rotate(0deg);  }
+  25%  { transform: translate(6px,-10px) rotate(20deg); }
+  50%  { transform: translate(0,-18px)   rotate(0deg);  }
+  75%  { transform: translate(-6px,-10px) rotate(-20deg);}
+  100% { transform: translate(0, 0)      rotate(0deg);  }
+}
+
+/* --- keyframes --- */
+@keyframes typing {
+  from { width: 0; }               /* reveal text */
+  to   { width: 16ch; }
+}
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50%      { border-color: #00ff11; }
+}
+@keyframes showPlane {
+  to { opacity: 1; }
+}
+@keyframes airplaneLoop {
+  0%   { transform: translate(0, 0)      rotate(0deg);  }
+  25%  { transform: translate(6px,-10px) rotate(20deg); }
+  50%  { transform: translate(0,-18px)   rotate(0deg);  }
+  75%  { transform: translate(-6px,-10px) rotate(-20deg);}
+  100% { transform: translate(0, 0)      rotate(0deg);  }
+}
+
+
+  #intro {
+    background: #00000;
+    font-size: 1.2em;
+    line-height: 1.4em;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  #quiz {
+    background: white;
+  }
+  label {
+    font-family: 'Quicksand';
+    font-weight: bold;
+    display: block;
+    margin-top: 1em;
+  }
+  input, select, button {
+    padding: 10px;
+    margin-top: 0.5em;
+    font-size: 1em;
+    width: 80%;
+    max-width: 300px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  button {
+    font-family: 'Bitcount Grid Double';
+    background-color: #00ff2f74;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 2em;
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    background-color: #FF5B00;
+  }
+  .result {
+    font: #008CFF
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-top: 30px;
+    min-height: 2em;
+  }
+  footer {
+    margin-top: 0px;
+    padding: 2em 2em;
+    font-size: 0.9em;
+    color: #444;
+    background-color: #96ff98;
+    border-top: 1px solid #ddd;
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px;
+    height: 20vh; /* so footer also fills viewport */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  footer p {
+    margin-bottom: 0.5em;
+  }
+</style>
+</head>
+
+<body>
+
+<section id="headline">
+<h1>
+  <span class="typing-text">Too Fat to Fly?</span>
+  <span class="loop-plane">✈️</span>
+</h1>
+</section>
+
+<div class="container">
+<section id="intro">
+  <h2><p>Life is arbitrary.<br><br></h2>
+<h4> An airplane says: <br> "no, cute dog, you are <i> too fat to fly</i>!" </h4> <br>
+And thus darling Ginger 🐶, raised on organic chow, <br>
+is sent down into the cavernous bowels of in-cargo 
+<br> <p style="font-family: Bitcount Grid Double"> florescent death. </p> <br> <br>
+So what will it be? Will your dog <b> meet the airline's in cabin weight limits?</b> <br> <br>
+<p style="font-size: 12px;"> Or are you rescheduling your vacation? ........... </p> </p>
+</section>
+</div>
+
+<section id="quiz">
+  <form id="dog-quiz" onsubmit="return checkDog();">
+    <label for="pet-weight">What is your pet's weight in lbs, please?</label>
+    <input type="number" id="pet-weight" required min="0" step="0.1" />
+    <label for="airline">Choose your airline:</label>
+    <select id="airline" required>
+      <option value="">-- Choose your airline --</option>
+      <option value="alaska">Alaska</option>
+      <option value="allegiant">Allegiant</option>
+      <option value="american">American</option>
+      <option value="delta">Delta</option>
+      <option value="frontier">Frontier</option>
+      <option value="hawaiian">Hawaiian</option>
+      <option value="jetblue">Jet Blue</option>
+      <option value="southwest">Southwest</option>
+      <option value="spirit">Spirit</option>
+      <option value="united">United</option>
+      <option value="other">Other</option>
+    </select>
+    <button type="submit">PLEASE TELL ME!</button>
+  </form>
+  <div class="result" id="result"></div>
+</section>
+
+<footer>
+  <p><strong>Methodology:</strong> I scraped a website that listed US airline pet policies. The data was from 2010, but it was the easiest page to scrape, which it still took me 6 hours. You're welcome. Check with your airline before flying.</p>
+  <p><em>This is a student project and not official guidance.</em></p> <p> Although, if I may, this project was inspired by attempts to lug my 20lb chunk of joy around to work trips with me. As she's just beyond the cusp of "acceptable weight", this meant taking some seriously ridiculous detours. <br>
+    <br> I hope to make a fat dog detour game for my next Lede project.</p>
+</footer>
+
+<script>
+  const limits = {
+    alaska: null,
+    allegiant: null,
+    american: 20,
+    delta: null,
+    frontier: null,
+    hawaiian: 25,
+    jetblue: 20,
+    southwest: null,
+    spirit: 40,
+    united: null,
+    other: null
+  };
+  function checkDog() {
+    const weight = parseFloat(document.getElementById("pet-weight").value);
+    const airline = document.getElementById("airline").value;
+    const result = document.getElementById("result");
+    if (!airline || isNaN(weight)) {
+      result.textContent = "Please fill out both fields.";
+      result.style.color = "black";
+      return false;
+    }
+    const limit = limits[airline];
+    if (limit === null) {
+      result.textContent = "🤷‍♂️ Airline says no limit. So I would say go for it?";
+      result.style.color = "#cc6600";
+    } else if (weight <= limit) {
+      result.textContent = "✅ HECK YES! Fido's going to Paris!";
+      result.style.color = "green";
+    } else {
+      result.textContent = "❌ Too chonky. 😭";
+      result.style.color = "red";
+    }
+    return false;
+  }
+</script>
+
+</body>
+</html>
